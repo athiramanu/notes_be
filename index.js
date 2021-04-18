@@ -1,4 +1,5 @@
-const config     = require("config");
+require('dotenv').config()
+
 const mongoose   = require("mongoose");
 const express    = require("express");
 const bodyParser = require("body-parser");
@@ -7,8 +8,8 @@ const cors       = require('cors')
 
 const app        = express();
 
-const port       = config.get("port");
-const dbUrl      = config.get("dbUrl");
+const port       = process.env.PORT || 3000;
+const dbUrl      = process.env.DATABASE_URL;
 
 
 mongoose.connect(
